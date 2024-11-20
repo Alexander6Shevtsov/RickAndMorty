@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZY4-xD-JBk">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -49,6 +50,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="characterImageView" destination="ffx-uc-Haj" id="aMt-u3-9ev"/>
+                                    <outlet property="nameLabel" destination="cfT-V0-hxd" id="nXS-Wt-0kr"/>
                                     <segue destination="Wlg-IE-nR9" kind="show" id="c8P-nG-QOk"/>
                                 </connections>
                             </tableViewCell>
@@ -61,15 +64,19 @@
                     <navigationItem key="navigationItem" id="rOd-4E-a1D">
                         <barButtonItem key="leftBarButtonItem" title="Prev" id="5ZF-8y-gSa">
                             <connections>
-                                <action selector="updateData:" destination="Mn1-l3-8fs" id="3D2-9Q-zCx"/>
+                                <action selector="updateData:" destination="Mn1-l3-8fs" id="XEj-aK-Rqz"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" id="FpM-Gr-g3G">
                             <connections>
-                                <action selector="updateData:" destination="Mn1-l3-8fs" id="wxo-L7-t8U"/>
+                                <action selector="updateData:" destination="Mn1-l3-8fs" id="yiw-hS-hAD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nextButton" destination="FpM-Gr-g3G" id="6lX-DC-h0y"/>
+                        <outlet property="previewsButton" destination="5ZF-8y-gSa" id="va5-mk-OVP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rta-pL-aXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -214,6 +221,10 @@
                                                 <constraint firstItem="Uq3-Vb-oXu" firstAttribute="top" secondItem="UKo-XQ-rW5" secondAttribute="top" constant="10" id="xXP-w7-N7k"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="characterImageView" destination="Uq3-Vb-oXu" id="DC8-9o-vEb"/>
+                                            <outlet property="nameLabel" destination="NYm-7C-UNH" id="Qo3-qn-gQq"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

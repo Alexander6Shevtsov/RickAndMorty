@@ -17,7 +17,7 @@ final class CharacterDetailsViewController: UIViewController {
         }
     }
     
-    // MARK: - Public properties
+    // MARK: - Public Properties
     var character: Character!
     
     // MARK: - Private Properties

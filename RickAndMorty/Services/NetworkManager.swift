@@ -54,3 +54,17 @@ final class NetworkManager {
         }
     }
 }
+
+// MARK: - APIEndpoint
+extension NetworkManager {
+    enum APIEndpoint {
+        case baseURL
+        
+        var url: URL {
+            switch self {
+            case .baseURL:
+                return URL(string: "https://rickandmortyapi.com/api/character")!
+            }
+        }
+    }
+}

@@ -9,6 +9,10 @@ import UIKit
 
 final class CharactersTableViewController: UITableViewController {
     
+    @IBOutlet var previewsButton: UIBarButtonItem!
+    @IBOutlet var nextButton: UIBarButtonItem!
+    
+    
     //MARK: Private properties
     private let networkManager = NetworkManager.shared
     private var rickAndMorty: RickAndMorty?
@@ -30,7 +34,7 @@ final class CharactersTableViewController: UITableViewController {
         
         setupNavigationBar()
         setupSearchController()
-        fetchData(from: RickAndMortyAPI.baseURL.url)
+        fetchData(from: NetworkManager.APIEndpoint.baseURL.url)
     }
     
     // MARK: - Navigation
@@ -83,6 +87,8 @@ final class CharactersTableViewController: UITableViewController {
             case .success(let rickAndMorty):
                 self?.rickAndMorty = rickAndMorty
                 self?.tableView.reloadData()
+                self?.previewsButton.isEnabled = rickAndMorty.info.prev != nil
+                self?.nextButton.isEnabled = rickAndMorty.info.next != nil
             case .failure(let error):
                 print(error)
             }
